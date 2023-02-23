@@ -1,0 +1,9 @@
+class: NoticeBoard
+table: noticeboard
+
+fields:
+  notice: String
+  date: String
+  subject: String
+  noticeId: int
+  

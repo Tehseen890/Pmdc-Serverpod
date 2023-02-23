@@ -1,0 +1,14 @@
+class: Assignments
+table: assignment
+
+fields:
+  title: String
+  deadLine: String
+  topic: String
+  file: String
+  isSubmited: bool
+  dateAdded: String
+  subjectId: int
+  section: String
+  programId: String
+  classId: int

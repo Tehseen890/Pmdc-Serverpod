@@ -1,0 +1,14 @@
+class: Quizes
+table: quizes
+
+fields:
+  chapterName: String
+  chapterNo: String
+  topic: String
+  file: String
+  teacherId: int
+  dateAdded: String
+  viewCount: String
+  subjectId: int
+  section: String
+  classId: int

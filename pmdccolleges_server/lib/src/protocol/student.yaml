@@ -1,0 +1,20 @@
+class: Student
+table: student
+
+fields:
+  studentId: String
+  firstName: String
+  lastName: String
+  dateOfBirth: String
+  statue: bool
+  fatherName: String
+  image: String
+  transport: bool
+  busId: int
+  section: String
+  scholarship: bool
+  admissionDate: String
+  gender: String
+  classId: int
+  password: String
+  programId: int 

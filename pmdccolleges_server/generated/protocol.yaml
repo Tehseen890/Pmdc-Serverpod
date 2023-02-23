@@ -1,0 +1,11 @@
+example:
+  - hello:
+feeRecord:
+  - getFeeRecord:
+noticeBoard:
+  - getNotice:
+student:
+  - getStudent:
+  - addStudent:
+subjects:
+  - getSubjects:

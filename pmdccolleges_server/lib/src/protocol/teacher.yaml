@@ -1,0 +1,14 @@
+class: Teacher
+table: teacher
+
+fields:
+  teacherId: String
+  teacherName: String
+  dateOfBirth: String
+  qualification: String
+  status: bool
+  transport: bool
+  busId: bool
+  age: int
+  password: String
+  subjectId: String

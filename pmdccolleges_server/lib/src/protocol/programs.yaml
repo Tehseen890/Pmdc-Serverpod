@@ -1,0 +1,7 @@
+class: Program
+table: program
+
+fields:
+  programId: int
+  programName: String
+  

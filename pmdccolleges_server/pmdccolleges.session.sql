@@ -1,0 +1,2 @@
+INSERT INTO student (id, studentId, firstName,lastName,dateOfBirth,statue,fatherName,image,transport,busId,section,scholarship,admissionDate,gender,classId,password,programId)
+VALUES (1234, '12345', 'Zaka','ulla','14-2-1998',true,'Umar Mommand','https://media.istockphoto.com/id/1300972574/photo/millennial-male-team-leader-organize-virtual-workshop-with-employees-online.jpg?b=1&s=170667a&w=0&k=20&c=96pCQon1xF3_onEkkckNg4cC9SCbshMvx0CfKl2ZiYs=',true,1,'A',true,'12-2-2023','Male',1,'asdf1234',1);

@@ -1,0 +1,9 @@
+class: Subjects
+table: subjects
+
+fields:
+  subjectId: String
+  subjectName: String
+  subjectCode: String
+  programId: int
+  classId: int

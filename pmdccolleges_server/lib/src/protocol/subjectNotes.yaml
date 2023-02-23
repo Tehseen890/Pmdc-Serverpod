@@ -1,0 +1,15 @@
+class: SubjectNotes
+table: subjectnotes
+
+fields:
+  chapterName: String
+  chapterNo: String
+  topic: String
+  file: String
+  teacherId: int
+  dateAdded: String
+  viewCount: String
+  subjectId: int
+  programId: int
+  section: String
+  classId: int

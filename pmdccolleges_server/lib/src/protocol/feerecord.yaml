@@ -1,0 +1,8 @@
+class: FeeRecord
+table: feerecord
+
+fields:
+  totalFee: int
+  paid: int
+  instalmentDate: String
+  studentId: String

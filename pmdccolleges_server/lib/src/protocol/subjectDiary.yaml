@@ -1,0 +1,14 @@
+class: SubjectDiary
+table: subjectdiary
+
+fields:
+  weekNo: String
+  chapterNo: String
+  chapterName: String
+  topic: String
+  dateAdded: String
+  status: String
+  subjectId: int
+  section: String
+  programId: int
+  classId: int
