@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:pmdccolleges_flutter/ui/auth/login_screen/login_screen.dart';
 import 'package:pmdccolleges_flutter/ui/auth/signup_screen/signup_screen.dart';
 
 import '../../constants/constants.dart';
@@ -18,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
         const Duration(seconds: 3),
         () => Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => const SignUpScreen())));
+            MaterialPageRoute(builder: (context) => const LoginScreen())));
   }
 
   @override

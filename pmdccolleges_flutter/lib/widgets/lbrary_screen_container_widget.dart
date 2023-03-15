@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:pmdccolleges_client/pmdccolleges_client.dart';
 
 import '../constants/constants.dart';
+
 class LibraryScreensConainerWidget extends StatelessWidget {
-  const LibraryScreensConainerWidget({
+  Library libraryBooks;
+  LibraryScreensConainerWidget({
+    required this.libraryBooks,
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 220,
-      decoration:BoxDecoration(
-        borderRadius:  BorderRadius.circular(10),
+      margin: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+      height: 140,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
         color: kLightBlueColor,
       ),
       child: Padding(
@@ -23,61 +28,65 @@ class LibraryScreensConainerWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
-                  children: const [
-                    Icon(Icons.folder_outlined,size: 30,color: Colors.white,),
-                    SizedBox(width: 10,),
-                    Text('Serial No.',style: TextStyle(color: Colors.white,fontSize: 17),)
-
+                  children: [
+                    Icon(
+                      Icons.folder_outlined,
+                      size: 30,
+                      color: Colors.white,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      'Serial No. ${libraryBooks.sNo}',
+                      style: TextStyle(color: Colors.white, fontSize: 17),
+                    )
                   ],
                 ),
-                Row(
-                  children: const [
-                    Icon(Icons.folder_outlined,size: 30,color: Colors.white,),
-                    SizedBox(width: 10,),
-                    Text('Accession No.',style: TextStyle(color: Colors.white,fontSize: 17),)
-
-                  ],
-                ),
-
               ],
             ),
-
-            Row(
-              children: const [
-                Icon(Icons.save,size: 30,color: Colors.white,),
-                SizedBox(width: 10,),
-                Text('Book Name:',style: TextStyle(color: Colors.white,fontSize: 17),)
-
-              ],
+            Expanded(
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.save,
+                    size: 30,
+                    color: Colors.white,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Expanded(
+                    child: Text(
+                      'Book Name: ${libraryBooks.bookName}',
+                      style: TextStyle(color: Colors.white, fontSize: 17),
+                    ),
+                  ),
+                ],
+              ),
             ),
-            const SizedBox(height: 15,),
+            const SizedBox(
+              height: 15,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
-                  children: const [
-
-                    Text('Test Date:',style: TextStyle(color: Colors.white,fontSize: 11)),
-                    SizedBox(width: 2,),
-                    Text('27-Jan-2023',style: TextStyle(color: Colors.white,fontSize: 12)),
+                  children: [
+                    Text('Issued Date:',
+                        style: TextStyle(color: Colors.white, fontSize: 11)),
+                    SizedBox(
+                      width: 2,
+                    ),
+                    Text('${libraryBooks.givenDate}',
+                        style: TextStyle(color: Colors.white, fontSize: 12)),
                   ],
                 ),
-                Container(
-                  height: 35,
-                  width: 120,
-                  decoration: BoxDecoration(
-                    color: const Color(0xfff06709),
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  child: const Center(child: Text('Download',style: TextStyle(fontSize: 18,color: Colors.white),),),
-                )
               ],
             ),
-
           ],
         ),
-      )
-      ,
+      ),
     );
   }
 }

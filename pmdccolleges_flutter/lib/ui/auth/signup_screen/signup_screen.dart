@@ -3,10 +3,10 @@ import 'package:pmdccolleges_client/pmdccolleges_client.dart';
 import 'package:pmdccolleges_flutter/constants/constants.dart';
 import 'package:pmdccolleges_flutter/main.dart';
 import 'package:pmdccolleges_flutter/ui/auth/login_screen/login_screen.dart';
+import 'package:pmdccolleges_flutter/ui/student/home_page/home_page.dart';
 
 import '../../../widgets/facebook_google_btn_widget.dart';
 import '../../../widgets/signin_login_btn_widget.dart';
-import '../../home_page/home_page.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);

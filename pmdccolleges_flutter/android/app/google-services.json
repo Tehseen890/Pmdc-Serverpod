@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "389868459586",
+    "project_id": "pmdccolleges",
+    "storage_bucket": "pmdccolleges.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:389868459586:android:68514e6a31aa26a0183fdb",
+        "android_client_info": {
+          "package_name": "com.example.pmdccolleges_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "389868459586-ec3g18286fl7rs4hcn88nu7su4flrt45.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0Kqmb69Duq_k3kQ4q6NxTCNCU5t_Yssk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "389868459586-ec3g18286fl7rs4hcn88nu7su4flrt45.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

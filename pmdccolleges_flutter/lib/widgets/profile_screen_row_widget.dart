@@ -9,8 +9,7 @@ class ProfileScreenRowWidget extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  final text1,value1,text2,value2;
-
+  final text1, value1, text2, value2;
 
   @override
   Widget build(BuildContext context) {
@@ -22,21 +21,35 @@ class ProfileScreenRowWidget extends StatelessWidget {
           color: Colors.grey.withOpacity(.1),
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 12.0,horizontal: 5),
+          padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 5),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children:  [
-              Text(text1.toString(),style: TextStyle(color: Colors.black,fontSize: 15,fontWeight: FontWeight.w600
-              ),),
-              Text(value1.toString(),style: TextStyle(color: Colors.black87),),
-              Flexible(
-                child: Text(text2.toString(),style: TextStyle(color: Colors.black,fontSize: 15,fontWeight: FontWeight.w600
-                ),),
+            children: [
+              Text(
+                text1.toString(),
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600),
               ),
-              Text(value2.toString(),style: TextStyle(color: Colors.black87),),
-
-
+              Text(
+                value1.toString(),
+                style: TextStyle(color: Colors.black87),
+              ),
+              Flexible(
+                child: Text(
+                  text2.toString(),
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600),
+                ),
+              ),
+              Text(
+                value2.toString(),
+                style: TextStyle(color: Colors.black87),
+              ),
             ],
           ),
         ),
