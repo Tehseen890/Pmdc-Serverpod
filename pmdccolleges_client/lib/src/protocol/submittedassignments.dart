@@ -8,49 +8,46 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod_client/serverpod_client.dart' as _i1;
 
-class SubjectNotes extends _i1.SerializableEntity {
-  SubjectNotes({
+class SubmittedAssignments extends _i1.SerializableEntity {
+  SubmittedAssignments({
     this.id,
-    required this.chapterName,
-    required this.chapterNo,
-    required this.topic,
     required this.file,
-    required this.teacherId,
+    required this.studentName,
+    required this.studentId,
     required this.dateAdded,
-    required this.viewCount,
     required this.subjectId,
-    required this.programId,
     required this.section,
+    required this.programId,
     required this.classId,
+    required this.teacherId,
+    required this.assignmentId,
   });
 
-  factory SubjectNotes.fromJson(
+  factory SubmittedAssignments.fromJson(
     Map<String, dynamic> jsonSerialization,
     _i1.SerializationManager serializationManager,
   ) {
-    return SubjectNotes(
+    return SubmittedAssignments(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
-      chapterName: serializationManager
-          .deserialize<String>(jsonSerialization['chapterName']),
-      chapterNo: serializationManager
-          .deserialize<String>(jsonSerialization['chapterNo']),
-      topic:
-          serializationManager.deserialize<String>(jsonSerialization['topic']),
       file: serializationManager.deserialize<String>(jsonSerialization['file']),
-      teacherId: serializationManager
-          .deserialize<String>(jsonSerialization['teacherId']),
+      studentName: serializationManager
+          .deserialize<String>(jsonSerialization['studentName']),
+      studentId: serializationManager
+          .deserialize<String>(jsonSerialization['studentId']),
       dateAdded: serializationManager
           .deserialize<String>(jsonSerialization['dateAdded']),
-      viewCount: serializationManager
-          .deserialize<String>(jsonSerialization['viewCount']),
-      subjectId: serializationManager
-          .deserialize<String>(jsonSerialization['subjectId']),
-      programId:
-          serializationManager.deserialize<int>(jsonSerialization['programId']),
+      subjectId:
+          serializationManager.deserialize<int>(jsonSerialization['subjectId']),
       section: serializationManager
           .deserialize<String>(jsonSerialization['section']),
+      programId: serializationManager
+          .deserialize<String>(jsonSerialization['programId']),
       classId:
           serializationManager.deserialize<int>(jsonSerialization['classId']),
+      teacherId: serializationManager
+          .deserialize<String>(jsonSerialization['teacherId']),
+      assignmentId: serializationManager
+          .deserialize<int>(jsonSerialization['assignmentId']),
     );
   }
 
@@ -59,43 +56,40 @@ class SubjectNotes extends _i1.SerializableEntity {
   /// the id will be null.
   int? id;
 
-  String chapterName;
-
-  String chapterNo;
-
-  String topic;
-
   String file;
 
-  String teacherId;
+  String studentName;
+
+  String studentId;
 
   String dateAdded;
 
-  String viewCount;
-
-  String subjectId;
-
-  int programId;
+  int subjectId;
 
   String section;
 
+  String programId;
+
   int classId;
+
+  String teacherId;
+
+  int assignmentId;
 
   @override
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'chapterName': chapterName,
-      'chapterNo': chapterNo,
-      'topic': topic,
       'file': file,
-      'teacherId': teacherId,
+      'studentName': studentName,
+      'studentId': studentId,
       'dateAdded': dateAdded,
-      'viewCount': viewCount,
       'subjectId': subjectId,
-      'programId': programId,
       'section': section,
+      'programId': programId,
       'classId': classId,
+      'teacherId': teacherId,
+      'assignmentId': assignmentId,
     };
   }
 }

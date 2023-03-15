@@ -8,45 +8,39 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod_client/serverpod_client.dart' as _i1;
 
-class Assignments extends _i1.SerializableEntity {
-  Assignments({
+class Announcement extends _i1.SerializableEntity {
+  Announcement({
     this.id,
+    required this.sNo,
     required this.title,
-    required this.deadLine,
-    required this.topic,
-    required this.file,
-    required this.isSubmited,
-    required this.dateAdded,
+    required this.description,
+    required this.publishDate,
     required this.subjectId,
-    required this.section,
     required this.programId,
+    required this.section,
     required this.classId,
     required this.teacherId,
   });
 
-  factory Assignments.fromJson(
+  factory Announcement.fromJson(
     Map<String, dynamic> jsonSerialization,
     _i1.SerializationManager serializationManager,
   ) {
-    return Assignments(
+    return Announcement(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
+      sNo: serializationManager.deserialize<int>(jsonSerialization['sNo']),
       title:
           serializationManager.deserialize<String>(jsonSerialization['title']),
-      deadLine: serializationManager
-          .deserialize<String>(jsonSerialization['deadLine']),
-      topic:
-          serializationManager.deserialize<String>(jsonSerialization['topic']),
-      file: serializationManager.deserialize<String>(jsonSerialization['file']),
-      isSubmited: serializationManager
-          .deserialize<bool>(jsonSerialization['isSubmited']),
-      dateAdded: serializationManager
-          .deserialize<String>(jsonSerialization['dateAdded']),
+      description: serializationManager
+          .deserialize<String>(jsonSerialization['description']),
+      publishDate: serializationManager
+          .deserialize<String>(jsonSerialization['publishDate']),
       subjectId:
           serializationManager.deserialize<int>(jsonSerialization['subjectId']),
+      programId:
+          serializationManager.deserialize<int>(jsonSerialization['programId']),
       section: serializationManager
           .deserialize<String>(jsonSerialization['section']),
-      programId: serializationManager
-          .deserialize<String>(jsonSerialization['programId']),
       classId:
           serializationManager.deserialize<int>(jsonSerialization['classId']),
       teacherId: serializationManager
@@ -59,23 +53,19 @@ class Assignments extends _i1.SerializableEntity {
   /// the id will be null.
   int? id;
 
+  int sNo;
+
   String title;
 
-  String deadLine;
+  String description;
 
-  String topic;
-
-  String file;
-
-  bool isSubmited;
-
-  String dateAdded;
+  String publishDate;
 
   int subjectId;
 
-  String section;
+  int programId;
 
-  String programId;
+  String section;
 
   int classId;
 
@@ -85,15 +75,13 @@ class Assignments extends _i1.SerializableEntity {
   Map<String, dynamic> toJson() {
     return {
       'id': id,
+      'sNo': sNo,
       'title': title,
-      'deadLine': deadLine,
-      'topic': topic,
-      'file': file,
-      'isSubmited': isSubmited,
-      'dateAdded': dateAdded,
+      'description': description,
+      'publishDate': publishDate,
       'subjectId': subjectId,
-      'section': section,
       'programId': programId,
+      'section': section,
       'classId': classId,
       'teacherId': teacherId,
     };
