@@ -1,11 +1,54 @@
+announcement:
+  - getAnnouncementStudent:
+  - getAnnouncementTeacher:
+  - addAnnouncement:
+  - updateAnnouncement:
+  - deleteAnnouncement:
+assignment:
+  - getAssignmentsStudent:
+  - getAssignmentsTeacher:
+  - addAssignment:
+  - updateAssignment:
+  - deleteAssignment:
+  - submitAsignment:
+  - getSubmitasignment:
+  - getSubmitasignmentForStudent:
+assignSubjects:
+  - getTeacherSubjects:
+  - addStudent:
 example:
   - hello:
 feeRecord:
   - getFeeRecord:
+library:
+  - getBooks:
 noticeBoard:
   - getNotice:
 student:
   - getStudent:
   - addStudent:
+  - getStudents:
+subjectdiary:
+  - getSubjectDiary:
+  - getSubjectDiaryTeacher:
+  - addSubjectDiary:
+  - updateSubjectDiary:
+  - deleteSubjectDiary:
+subjectnotes:
+  - getSubjecrNotes:
+  - getSubjectNotesTeacher:
+  - getTeacherNotes:
+  - addSubjectNotes:
+  - updateSubjectNotes:
+  - deleteSubjectNotes:
 subjects:
   - getSubjects:
+teacher:
+  - getTeacher:
+  - addStudent:
+videolecture:
+  - getVideoLecture:
+  - getVideoLectureTeacher:
+  - addVideoLecture:
+  - updateVideoLectures:
+  - deleteVideoLectures:

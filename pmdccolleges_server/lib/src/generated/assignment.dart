@@ -21,6 +21,7 @@ class Assignments extends _i1.TableRow {
     required this.section,
     required this.programId,
     required this.classId,
+    required this.teacherId,
   }) : super(id);
 
   factory Assignments.fromJson(
@@ -48,6 +49,8 @@ class Assignments extends _i1.TableRow {
           .deserialize<String>(jsonSerialization['programId']),
       classId:
           serializationManager.deserialize<int>(jsonSerialization['classId']),
+      teacherId: serializationManager
+          .deserialize<String>(jsonSerialization['teacherId']),
     );
   }
 
@@ -73,6 +76,8 @@ class Assignments extends _i1.TableRow {
 
   int classId;
 
+  String teacherId;
+
   @override
   String get tableName => 'assignment';
   @override
@@ -89,6 +94,7 @@ class Assignments extends _i1.TableRow {
       'section': section,
       'programId': programId,
       'classId': classId,
+      'teacherId': teacherId,
     };
   }
 
@@ -106,6 +112,7 @@ class Assignments extends _i1.TableRow {
       'section': section,
       'programId': programId,
       'classId': classId,
+      'teacherId': teacherId,
     };
   }
 
@@ -123,6 +130,7 @@ class Assignments extends _i1.TableRow {
       'section': section,
       'programId': programId,
       'classId': classId,
+      'teacherId': teacherId,
     };
   }
 
@@ -164,6 +172,9 @@ class Assignments extends _i1.TableRow {
         return;
       case 'classId':
         classId = value;
+        return;
+      case 'teacherId':
+        teacherId = value;
         return;
       default:
         throw UnimplementedError();
@@ -310,6 +321,8 @@ class AssignmentsTable extends _i1.Table {
 
   final classId = _i1.ColumnInt('classId');
 
+  final teacherId = _i1.ColumnString('teacherId');
+
   @override
   List<_i1.Column> get columns => [
         id,
@@ -323,6 +336,7 @@ class AssignmentsTable extends _i1.Table {
         section,
         programId,
         classId,
+        teacherId,
       ];
 }
 

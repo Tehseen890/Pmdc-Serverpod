@@ -12,3 +12,4 @@ fields:
   section: String
   programId: String
   classId: int
+  teacherId: String

@@ -1,0 +1,14 @@
+class: Submitasignment
+table: submitasignment
+
+fields:
+  file: String
+  studentName: String
+  studentId: String 
+  dateAdded: String
+  subjectId: int
+  section: String
+  programId: String
+  classId: int
+  teacherId: String
+  assignmentId: int

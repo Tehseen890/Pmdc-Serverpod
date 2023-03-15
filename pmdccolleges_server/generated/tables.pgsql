@@ -1,4 +1,25 @@
 --
+-- Class Announcement as table announcement
+--
+
+CREATE TABLE "announcement" (
+  "id" serial,
+  "sNo" integer NOT NULL,
+  "title" text NOT NULL,
+  "description" text NOT NULL,
+  "publishDate" text NOT NULL,
+  "subjectId" integer NOT NULL,
+  "programId" integer NOT NULL,
+  "section" text NOT NULL,
+  "classId" integer NOT NULL,
+  "teacherId" text NOT NULL
+);
+
+ALTER TABLE ONLY "announcement"
+  ADD CONSTRAINT announcement_pkey PRIMARY KEY (id);
+
+
+--
 -- Class Assignments as table assignment
 --
 
@@ -13,11 +34,31 @@ CREATE TABLE "assignment" (
   "subjectId" integer NOT NULL,
   "section" text NOT NULL,
   "programId" text NOT NULL,
-  "classId" integer NOT NULL
+  "classId" integer NOT NULL,
+  "teacherId" text NOT NULL
 );
 
 ALTER TABLE ONLY "assignment"
   ADD CONSTRAINT assignment_pkey PRIMARY KEY (id);
+
+
+--
+-- Class AssignSubjects as table assignsubjects
+--
+
+CREATE TABLE "assignsubjects" (
+  "id" serial,
+  "subjectName" text NOT NULL,
+  "assignDate" text NOT NULL,
+  "subjectId" text NOT NULL,
+  "programId" integer NOT NULL,
+  "classId" integer NOT NULL,
+  "section" text NOT NULL,
+  "teacherId" text NOT NULL
+);
+
+ALTER TABLE ONLY "assignsubjects"
+  ADD CONSTRAINT assignsubjects_pkey PRIMARY KEY (id);
 
 
 --
@@ -34,6 +75,23 @@ CREATE TABLE "feerecord" (
 
 ALTER TABLE ONLY "feerecord"
   ADD CONSTRAINT feerecord_pkey PRIMARY KEY (id);
+
+
+--
+-- Class Library as table library
+--
+
+CREATE TABLE "library" (
+  "id" serial,
+  "bookName" text NOT NULL,
+  "sNo" text NOT NULL,
+  "givenDate" text NOT NULL,
+  "returnDate" text NOT NULL,
+  "studentId" text NOT NULL
+);
+
+ALTER TABLE ONLY "library"
+  ADD CONSTRAINT library_pkey PRIMARY KEY (id);
 
 
 --
@@ -148,10 +206,10 @@ CREATE TABLE "subjectnotes" (
   "chapterNo" text NOT NULL,
   "topic" text NOT NULL,
   "file" text NOT NULL,
-  "teacherId" integer NOT NULL,
+  "teacherId" text NOT NULL,
   "dateAdded" text NOT NULL,
   "viewCount" text NOT NULL,
-  "subjectId" integer NOT NULL,
+  "subjectId" text NOT NULL,
   "programId" integer NOT NULL,
   "section" text NOT NULL,
   "classId" integer NOT NULL
@@ -176,6 +234,72 @@ CREATE TABLE "subjects" (
 
 ALTER TABLE ONLY "subjects"
   ADD CONSTRAINT subjects_pkey PRIMARY KEY (id);
+
+
+--
+-- Class Submission as table submission
+--
+
+CREATE TABLE "submission" (
+  "id" serial,
+  "file" text NOT NULL,
+  "studentName" text NOT NULL,
+  "studentId" text NOT NULL,
+  "dateAdded" text NOT NULL,
+  "subjectId" integer NOT NULL,
+  "section" text NOT NULL,
+  "programId" text NOT NULL,
+  "classId" integer NOT NULL,
+  "teacherId" text NOT NULL,
+  "assignmentId" integer NOT NULL
+);
+
+ALTER TABLE ONLY "submission"
+  ADD CONSTRAINT submission_pkey PRIMARY KEY (id);
+
+
+--
+-- Class Submitasignment as table submitasignment
+--
+
+CREATE TABLE "submitasignment" (
+  "id" serial,
+  "file" text NOT NULL,
+  "studentName" text NOT NULL,
+  "studentId" text NOT NULL,
+  "dateAdded" text NOT NULL,
+  "subjectId" integer NOT NULL,
+  "section" text NOT NULL,
+  "programId" text NOT NULL,
+  "classId" integer NOT NULL,
+  "teacherId" text NOT NULL,
+  "assignmentId" integer NOT NULL
+);
+
+ALTER TABLE ONLY "submitasignment"
+  ADD CONSTRAINT submitasignment_pkey PRIMARY KEY (id);
+
+
+--
+-- Class SubmittedAssignments as table submittedassignments
+--
+
+CREATE TABLE "submittedassignments" (
+  "id" serial,
+  "file" text NOT NULL,
+  "studentName" text NOT NULL,
+  "studentId" text NOT NULL,
+  "dateAdded" text NOT NULL,
+  "subjectId" integer NOT NULL,
+  "section" text NOT NULL,
+  "programId" text NOT NULL,
+  "classId" integer NOT NULL,
+  "teacherId" text NOT NULL,
+  "assignmentId" integer NOT NULL
+);
+
+ALTER TABLE ONLY "submittedassignments"
+  ADD CONSTRAINT submittedassignments_pkey PRIMARY KEY (id);
 
 
 --

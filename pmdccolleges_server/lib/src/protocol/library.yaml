@@ -1,0 +1,10 @@
+class: Library
+table: library
+
+fields:
+  bookName: String
+  sNo: String
+  givenDate: String
+  returnDate: String
+  studentId: String
+  

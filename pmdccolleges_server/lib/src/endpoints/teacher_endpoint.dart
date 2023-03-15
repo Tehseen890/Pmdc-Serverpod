@@ -8,7 +8,7 @@ import 'package:serverpod/serverpod.dart';
 
 // After adding or modifying an endpoint, you will need to run
 // `serverpod generate` to update the server and client code.
-class StudentEndpoint extends Endpoint {
+class TeacherEndpoint extends Endpoint {
   // You create methods in your endpoint which are accessible from the client by
   // creating a public method with `Session` as its first parameter. Supported
   // parameter types are `bool`, `int`, `double`, `String`, `DateTime`, and any
@@ -16,31 +16,17 @@ class StudentEndpoint extends Endpoint {
   // should return a typed future; the same types as for the parameters are
   // supported. The `session` object provides access to the database, logging,
   // passwords, and information about the request being made to the server.
-  Future<Student?> getStudent(
-      Session session, String? id, String password) async {
-    return await Student.findSingleRow(
+  Future<Teacher?> getTeacher(
+      Session session, String? teacherId, String password) async {
+    return await Teacher.findSingleRow(
       session,
-      where: (std) => std.studentId.equals(id) & std.password.equals(password),
+      where: (techr) =>
+          techr.teacherId.equals(teacherId) & techr.password.equals(password),
     );
   }
 
   Future<bool?> addStudent(Session session, Student student) async {
     await Student.insert(session, student);
     return true;
-  }
-
-  Future<List<Student>?> getStudents(
-    Session session,
-    int classId,
-    int programId,
-    String section,
-  ) async {
-    return await Student.find(
-      session,
-      where: (std) =>
-          std.classId.equals(classId) &
-          std.programId.equals(programId) &
-          std.section.like(section),
-    );
   }
 }

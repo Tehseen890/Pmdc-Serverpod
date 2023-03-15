@@ -1,0 +1,11 @@
+class: AssignSubjects
+table: assignsubjects
+
+fields:
+  subjectName: String
+  assignDate: String
+  subjectId: String
+  programId: int
+  classId: int
+  section: String
+  teacherId: String

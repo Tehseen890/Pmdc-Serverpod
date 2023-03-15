@@ -17,7 +17,7 @@ INSERT INTO student (
   programId
 )
 VALUES (
-  1234
+  54321,
   'Zaka',
   'Ulla',
   '1998-04-14',

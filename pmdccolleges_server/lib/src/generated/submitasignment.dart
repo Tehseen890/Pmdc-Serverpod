@@ -8,93 +8,87 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod/serverpod.dart' as _i1;
 
-class SubjectNotes extends _i1.TableRow {
-  SubjectNotes({
+class Submitasignment extends _i1.TableRow {
+  Submitasignment({
     int? id,
-    required this.chapterName,
-    required this.chapterNo,
-    required this.topic,
     required this.file,
-    required this.teacherId,
+    required this.studentName,
+    required this.studentId,
     required this.dateAdded,
-    required this.viewCount,
     required this.subjectId,
-    required this.programId,
     required this.section,
+    required this.programId,
     required this.classId,
+    required this.teacherId,
+    required this.assignmentId,
   }) : super(id);
 
-  factory SubjectNotes.fromJson(
+  factory Submitasignment.fromJson(
     Map<String, dynamic> jsonSerialization,
     _i1.SerializationManager serializationManager,
   ) {
-    return SubjectNotes(
+    return Submitasignment(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
-      chapterName: serializationManager
-          .deserialize<String>(jsonSerialization['chapterName']),
-      chapterNo: serializationManager
-          .deserialize<String>(jsonSerialization['chapterNo']),
-      topic:
-          serializationManager.deserialize<String>(jsonSerialization['topic']),
       file: serializationManager.deserialize<String>(jsonSerialization['file']),
-      teacherId: serializationManager
-          .deserialize<String>(jsonSerialization['teacherId']),
+      studentName: serializationManager
+          .deserialize<String>(jsonSerialization['studentName']),
+      studentId: serializationManager
+          .deserialize<String>(jsonSerialization['studentId']),
       dateAdded: serializationManager
           .deserialize<String>(jsonSerialization['dateAdded']),
-      viewCount: serializationManager
-          .deserialize<String>(jsonSerialization['viewCount']),
-      subjectId: serializationManager
-          .deserialize<String>(jsonSerialization['subjectId']),
-      programId:
-          serializationManager.deserialize<int>(jsonSerialization['programId']),
+      subjectId:
+          serializationManager.deserialize<int>(jsonSerialization['subjectId']),
       section: serializationManager
           .deserialize<String>(jsonSerialization['section']),
+      programId: serializationManager
+          .deserialize<String>(jsonSerialization['programId']),
       classId:
           serializationManager.deserialize<int>(jsonSerialization['classId']),
+      teacherId: serializationManager
+          .deserialize<String>(jsonSerialization['teacherId']),
+      assignmentId: serializationManager
+          .deserialize<int>(jsonSerialization['assignmentId']),
     );
   }
 
-  static final t = SubjectNotesTable();
-
-  String chapterName;
-
-  String chapterNo;
-
-  String topic;
+  static final t = SubmitasignmentTable();
 
   String file;
 
-  String teacherId;
+  String studentName;
+
+  String studentId;
 
   String dateAdded;
 
-  String viewCount;
-
-  String subjectId;
-
-  int programId;
+  int subjectId;
 
   String section;
 
+  String programId;
+
   int classId;
 
+  String teacherId;
+
+  int assignmentId;
+
   @override
-  String get tableName => 'subjectnotes';
+  String get tableName => 'submitasignment';
   @override
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'chapterName': chapterName,
-      'chapterNo': chapterNo,
-      'topic': topic,
       'file': file,
-      'teacherId': teacherId,
+      'studentName': studentName,
+      'studentId': studentId,
       'dateAdded': dateAdded,
-      'viewCount': viewCount,
       'subjectId': subjectId,
-      'programId': programId,
       'section': section,
+      'programId': programId,
       'classId': classId,
+      'teacherId': teacherId,
+      'assignmentId': assignmentId,
     };
   }
 
@@ -102,17 +96,16 @@ class SubjectNotes extends _i1.TableRow {
   Map<String, dynamic> toJsonForDatabase() {
     return {
       'id': id,
-      'chapterName': chapterName,
-      'chapterNo': chapterNo,
-      'topic': topic,
       'file': file,
-      'teacherId': teacherId,
+      'studentName': studentName,
+      'studentId': studentId,
       'dateAdded': dateAdded,
-      'viewCount': viewCount,
       'subjectId': subjectId,
-      'programId': programId,
       'section': section,
+      'programId': programId,
       'classId': classId,
+      'teacherId': teacherId,
+      'assignmentId': assignmentId,
     };
   }
 
@@ -120,17 +113,16 @@ class SubjectNotes extends _i1.TableRow {
   Map<String, dynamic> allToJson() {
     return {
       'id': id,
-      'chapterName': chapterName,
-      'chapterNo': chapterNo,
-      'topic': topic,
       'file': file,
-      'teacherId': teacherId,
+      'studentName': studentName,
+      'studentId': studentId,
       'dateAdded': dateAdded,
-      'viewCount': viewCount,
       'subjectId': subjectId,
-      'programId': programId,
       'section': section,
+      'programId': programId,
       'classId': classId,
+      'teacherId': teacherId,
+      'assignmentId': assignmentId,
     };
   }
 
@@ -143,47 +135,44 @@ class SubjectNotes extends _i1.TableRow {
       case 'id':
         id = value;
         return;
-      case 'chapterName':
-        chapterName = value;
-        return;
-      case 'chapterNo':
-        chapterNo = value;
-        return;
-      case 'topic':
-        topic = value;
-        return;
       case 'file':
         file = value;
         return;
-      case 'teacherId':
-        teacherId = value;
+      case 'studentName':
+        studentName = value;
+        return;
+      case 'studentId':
+        studentId = value;
         return;
       case 'dateAdded':
         dateAdded = value;
         return;
-      case 'viewCount':
-        viewCount = value;
-        return;
       case 'subjectId':
         subjectId = value;
-        return;
-      case 'programId':
-        programId = value;
         return;
       case 'section':
         section = value;
         return;
+      case 'programId':
+        programId = value;
+        return;
       case 'classId':
         classId = value;
+        return;
+      case 'teacherId':
+        teacherId = value;
+        return;
+      case 'assignmentId':
+        assignmentId = value;
         return;
       default:
         throw UnimplementedError();
     }
   }
 
-  static Future<List<SubjectNotes>> find(
+  static Future<List<Submitasignment>> find(
     _i1.Session session, {
-    SubjectNotesExpressionBuilder? where,
+    SubmitasignmentExpressionBuilder? where,
     int? limit,
     int? offset,
     _i1.Column? orderBy,
@@ -192,8 +181,8 @@ class SubjectNotes extends _i1.TableRow {
     bool useCache = true,
     _i1.Transaction? transaction,
   }) async {
-    return session.db.find<SubjectNotes>(
-      where: where != null ? where(SubjectNotes.t) : null,
+    return session.db.find<Submitasignment>(
+      where: where != null ? where(Submitasignment.t) : null,
       limit: limit,
       offset: offset,
       orderBy: orderBy,
@@ -204,17 +193,17 @@ class SubjectNotes extends _i1.TableRow {
     );
   }
 
-  static Future<SubjectNotes?> findSingleRow(
+  static Future<Submitasignment?> findSingleRow(
     _i1.Session session, {
-    SubjectNotesExpressionBuilder? where,
+    SubmitasignmentExpressionBuilder? where,
     int? offset,
     _i1.Column? orderBy,
     bool orderDescending = false,
     bool useCache = true,
     _i1.Transaction? transaction,
   }) async {
-    return session.db.findSingleRow<SubjectNotes>(
-      where: where != null ? where(SubjectNotes.t) : null,
+    return session.db.findSingleRow<Submitasignment>(
+      where: where != null ? where(Submitasignment.t) : null,
       offset: offset,
       orderBy: orderBy,
       orderDescending: orderDescending,
@@ -223,27 +212,27 @@ class SubjectNotes extends _i1.TableRow {
     );
   }
 
-  static Future<SubjectNotes?> findById(
+  static Future<Submitasignment?> findById(
     _i1.Session session,
     int id,
   ) async {
-    return session.db.findById<SubjectNotes>(id);
+    return session.db.findById<Submitasignment>(id);
   }
 
   static Future<int> delete(
     _i1.Session session, {
-    required SubjectNotesExpressionBuilder where,
+    required SubmitasignmentExpressionBuilder where,
     _i1.Transaction? transaction,
   }) async {
-    return session.db.delete<SubjectNotes>(
-      where: where(SubjectNotes.t),
+    return session.db.delete<Submitasignment>(
+      where: where(Submitasignment.t),
       transaction: transaction,
     );
   }
 
   static Future<bool> deleteRow(
     _i1.Session session,
-    SubjectNotes row, {
+    Submitasignment row, {
     _i1.Transaction? transaction,
   }) async {
     return session.db.deleteRow(
@@ -254,7 +243,7 @@ class SubjectNotes extends _i1.TableRow {
 
   static Future<bool> update(
     _i1.Session session,
-    SubjectNotes row, {
+    Submitasignment row, {
     _i1.Transaction? transaction,
   }) async {
     return session.db.update(
@@ -265,7 +254,7 @@ class SubjectNotes extends _i1.TableRow {
 
   static Future<void> insert(
     _i1.Session session,
-    SubjectNotes row, {
+    Submitasignment row, {
     _i1.Transaction? transaction,
   }) async {
     return session.db.insert(
@@ -276,13 +265,13 @@ class SubjectNotes extends _i1.TableRow {
 
   static Future<int> count(
     _i1.Session session, {
-    SubjectNotesExpressionBuilder? where,
+    SubmitasignmentExpressionBuilder? where,
     int? limit,
     bool useCache = true,
     _i1.Transaction? transaction,
   }) async {
-    return session.db.count<SubjectNotes>(
-      where: where != null ? where(SubjectNotes.t) : null,
+    return session.db.count<Submitasignment>(
+      where: where != null ? where(Submitasignment.t) : null,
       limit: limit,
       useCache: useCache,
       transaction: transaction,
@@ -290,55 +279,52 @@ class SubjectNotes extends _i1.TableRow {
   }
 }
 
-typedef SubjectNotesExpressionBuilder = _i1.Expression Function(
-    SubjectNotesTable);
+typedef SubmitasignmentExpressionBuilder = _i1.Expression Function(
+    SubmitasignmentTable);
 
-class SubjectNotesTable extends _i1.Table {
-  SubjectNotesTable() : super(tableName: 'subjectnotes');
+class SubmitasignmentTable extends _i1.Table {
+  SubmitasignmentTable() : super(tableName: 'submitasignment');
 
   /// The database id, set if the object has been inserted into the
   /// database or if it has been fetched from the database. Otherwise,
   /// the id will be null.
   final id = _i1.ColumnInt('id');
 
-  final chapterName = _i1.ColumnString('chapterName');
-
-  final chapterNo = _i1.ColumnString('chapterNo');
-
-  final topic = _i1.ColumnString('topic');
-
   final file = _i1.ColumnString('file');
 
-  final teacherId = _i1.ColumnString('teacherId');
+  final studentName = _i1.ColumnString('studentName');
+
+  final studentId = _i1.ColumnString('studentId');
 
   final dateAdded = _i1.ColumnString('dateAdded');
 
-  final viewCount = _i1.ColumnString('viewCount');
-
-  final subjectId = _i1.ColumnString('subjectId');
-
-  final programId = _i1.ColumnInt('programId');
+  final subjectId = _i1.ColumnInt('subjectId');
 
   final section = _i1.ColumnString('section');
 
+  final programId = _i1.ColumnString('programId');
+
   final classId = _i1.ColumnInt('classId');
+
+  final teacherId = _i1.ColumnString('teacherId');
+
+  final assignmentId = _i1.ColumnInt('assignmentId');
 
   @override
   List<_i1.Column> get columns => [
         id,
-        chapterName,
-        chapterNo,
-        topic,
         file,
-        teacherId,
+        studentName,
+        studentId,
         dateAdded,
-        viewCount,
         subjectId,
-        programId,
         section,
+        programId,
         classId,
+        teacherId,
+        assignmentId,
       ];
 }
 
-@Deprecated('Use SubjectNotesTable.t instead.')
-SubjectNotesTable tSubjectNotes = SubjectNotesTable();
+@Deprecated('Use SubmitasignmentTable.t instead.')
+SubmitasignmentTable tSubmitasignment = SubmitasignmentTable();

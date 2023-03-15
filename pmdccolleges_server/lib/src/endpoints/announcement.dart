@@ -1,14 +1,14 @@
 import 'package:pmdccolleges_server/src/generated/protocol.dart';
 import 'package:serverpod/server.dart';
 
-class SubjectdiaryEndpoint extends Endpoint {
-  Future<List<SubjectDiary>> getSubjectDiary(
+class AnnouncementEndpoint extends Endpoint {
+  Future<List<Announcement>> getAnnouncementStudent(
       Session session, String studentId, String subjectId) async {
     final student = await Student.findSingleRow(
       session,
       where: (student) => student.studentId.equals(studentId),
     );
-    return await SubjectDiary.find(
+    return await Announcement.find(
       session,
       where: (announcement) =>
           announcement.subjectId.equals(int.parse(subjectId)) &
@@ -18,14 +18,14 @@ class SubjectdiaryEndpoint extends Endpoint {
     );
   }
 
-  Future<List<SubjectDiary>> getSubjectDiaryTeacher(
+  Future<List<Announcement>> getAnnouncementTeacher(
       Session session,
       String teacherId,
       String subjectId,
       int classId,
       int programId,
       String section) async {
-    return await SubjectDiary.find(
+    return await Announcement.find(
       session,
       where: (announcement) =>
           announcement.subjectId.equals(int.parse(subjectId)) &
@@ -35,20 +35,20 @@ class SubjectdiaryEndpoint extends Endpoint {
     );
   }
 
-  Future<bool> addSubjectDiary(
-      Session session, SubjectDiary announcement) async {
-    await SubjectDiary.insert(session, announcement);
+  Future<bool> addAnnouncement(
+      Session session, Announcement announcement) async {
+    await Announcement.insert(session, announcement);
     return true;
   }
 
-  Future<bool> updateSubjectDiary(
-      Session session, SubjectDiary announcement) async {
-    await SubjectDiary.update(session, announcement);
+  Future<bool> updateAnnouncement(
+      Session session, Announcement announcement) async {
+    await Announcement.update(session, announcement);
     return true;
   }
 
-  Future<bool> deleteSubjectDiary(Session session, int assignmentId) async {
-    await SubjectDiary.delete(
+  Future<bool> deleteAnnouncement(Session session, int assignmentId) async {
+    await Announcement.delete(
       session,
       where: (assignment) => assignment.id.equals(assignmentId),
     );

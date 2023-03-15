@@ -1,0 +1,13 @@
+class: Announcement
+table: announcement
+
+fields:
+  sNo: int
+  title: String
+  description: String
+  publishDate: String
+  subjectId: int
+  programId: int
+  section: String
+  classId: int
+  teacherId: String

@@ -6,10 +6,10 @@ fields:
   chapterNo: String
   topic: String
   file: String
-  teacherId: int
+  teacherId: String
   dateAdded: String
   viewCount: String
-  subjectId: int
+  subjectId: String
   programId: int
   section: String
   classId: int
